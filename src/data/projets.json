@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0, 
+        "titre": "À propos magazine", 
+        "categorie": "Design", 
+        "tag": "Skateboard", 
+        "competences": ["Direction artistique", "UX", "UI"], 
+        "annee": 2020, 
+        "contexte": "1", 
+        "problematique": "1", 
+        "imageCouv": "1.jpg", 
+        "image1": "1.jpg", 
+        "image2": "1.jpg", 
+        "image3": "1.jpg", 
+        "image4": "1.jpg", 
+        "lien": "https://github.fr/"
+    }
+]
