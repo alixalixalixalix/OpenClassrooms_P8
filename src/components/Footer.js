@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="marginApp">
-      <Link>
+    <footer id="footer" className="marginApp">
+      <a href="mailto:alixbocqui@gmail.com">
         <img src="mail-footer.png" alt=""></img>
-      </Link>
+      </a>
     </footer>
   );
 };

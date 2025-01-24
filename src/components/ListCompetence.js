@@ -3,12 +3,14 @@ import TitreSection from "./TitreSection";
 import CompetenceXL from "./CompetenceXL";
 import data from "../data/competences.json";
 
+const dataLength = data.length;
+
 const ListCompetence = () => {
   return (
-    <div className="marginApp">
-      <TitreSection titre="Compétences 09" />
+    <div className="marginApp" >
+      <TitreSection titre="Compétences " num={dataLength} />
       {data.map(({competence}) => (
-        <CompetenceXL competence={competence} />
+        <CompetenceXL key={`${competence}`} competence={competence} />
       ))}
     </div>
   );

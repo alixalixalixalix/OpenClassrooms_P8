@@ -1,10 +1,10 @@
 import React from 'react';
 
-const TitreSection = ( {titre} ) => {
+const TitreSection = ( {titre, num} ) => {
     return (
         <div>
             <hr></hr>
-            <p className="titreSection">{ titre }</p>
+            <p className="titreSection">{ titre }<sup>{ num }</sup></p>
         </div>
     );
 };

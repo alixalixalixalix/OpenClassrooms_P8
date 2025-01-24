@@ -10,6 +10,10 @@
 
 $color-black: #282828;
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   font-weight: normal;
   font-family: "matter-regular";
@@ -20,13 +24,74 @@ $color-black: #282828;
 .marginApp {
   max-width: 1300px;
   margin: auto;
-  padding: 0px 70px 0 70px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 48px;
+  padding-bottom: 128px;
+  position: relative;
+  align-items: center;
+
+  #rs {
+    display: inline;
+    height: 100%;
+    a img {
+      height: 24px;
+      margin-right: 24px;
+    }
+    a:hover {
+      opacity: 0.5;
+    }
+  }
+  #toggle {
+    position:absolute;
+    z-index:-1;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    p {
+      margin: 0;
+      opacity: 0.3;
+    }
+    .actif {
+      opacity: 1;
+    }
+    .bg {
+      width: 150px;
+      height: 39px;
+      background: $color-black;
+      border-radius: 50px;
+      div {
+        width: 31px;
+        height: 31px;
+        background: white;
+        margin: 4px;
+        border-radius: 50px;
+      }
+    }
+  }
+  #contact {
+    margin: 0;
+    a {
+      text-decoration: none;
+    }
+  }
 }
 
 #sectionPresentation {
   margin-bottom: 120px;
   h1 {
     font-size: 36px;
+    margin: 0;
+    padding-bottom: 24px;
   }
   .exp {
     margin-bottom: 8px;
@@ -41,6 +106,10 @@ $color-black: #282828;
   }
 }
 
+.titreSection {
+  margin-top: 36px;
+}
+
 #listButtonCategorie {
   display: flex;
   gap: 6px;
@@ -50,37 +119,67 @@ $color-black: #282828;
     border-radius: 30px;
     border: 0px;
     background: rgba(40, 40, 40, 0.1);
+    cursor: pointer;
+  }
+  .actif {
+    background: $color-black;
+    color:white;
   }
 }
 
 #listProjet {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
   margin-bottom: 128px;
+  a {
+    width: 45%;
+    gap: 24px;
+    text-decoration: none;
+  }
 }
 
 .cardProjet {
-  width: 100%;
+  position: relative;
+  max-width: 100%;
+  padding: 36px;
   background-color: greenyellow;
   aspect-ratio: 1 / 1;
+  &__info__tag {
+    text-transform: uppercase;
+    margin: 0;
+  }
+  &__info__titre {
+    font-size: 36px;
+    margin-top: 8px;
+  }
+  &__info__competence {
+    position: absolute;
+    bottom: 36px;
+    margin: 0;
+    display: inline;
+    padding: 6px 12px 6px 12px;
+    border: 1px solid $color-black;
+    border-radius: 8px;
+  }
 }
 
 .competenceXL {
-    display: inline-flex;
-    margin: 0 12px 12px 0;
+  display: inline-flex;
+  margin: 0 12px 12px 0;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
   p {
     display: inline;
     font-size: 36px;
     padding: 6px 12px;
     border: 1px solid $color-black;
     border-radius: 8px;
-    margin:0;
+    margin: 0;
   }
-}
-
-.titreSection {
-  margin: 36px 0px 36px 0px;
 }
 
 footer {
