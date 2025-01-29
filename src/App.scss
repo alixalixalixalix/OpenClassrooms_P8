@@ -146,11 +146,12 @@ header {
 .cardProjet {
   position: relative;
   max-width: 100%;
-  background-color: greenyellow;
   aspect-ratio: 1 / 1;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .1);  
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   &__info {
+    opacity: 0;
     padding: 36px;
+    transition: opacity 500ms;
     &__tag {
       text-transform: uppercase;
       margin: 0;
@@ -190,26 +191,70 @@ header {
 }
 
 #listCompetences {
-  position:absolute;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
   bottom: 36px;
-  .competenceS {
-    display: inline-flex;
-    margin-right: 6px;
-    p {
-      border: 1px solid black;
-      border-radius: 8px;
-      padding: 6px 12px;
-      margin:0;
-    }
+  gap: 6px;
+}
+
+.competenceS {
+  display: inline-flex;
+  p {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin: 0;
   }
 }
 
-footer {
-  img {
-    margin: 384px 0px 30px 0px;
-    width: 100%;
-  }
+footer a {
+  margin: 384px 0px 30px 0px;
+  width: 100%;
   p {
-    font-size: 1em;
+    font-size: 36px;
+    margin: 0;
+  }
+}
+
+#projetIntro {
+  .projetIntro__listCompetences {
+    display: flex;
+    gap: 8px;
+  }
+  h1 {
+    font-size: 64px;
+    margin-top: 12px;
+  }
+  .projetContexte {
+    width: 50%;
+    margin: 64px 0 128px 0;
+  }
+}
+
+.conteneurP {
+  width: 50%;
+  margin: 128px 0 128px 0;
+  &__titre {
+    color: $color-black;
+    opacity: 0.3;
+    font-size: 16px;
+    margin: 0px 0px 8px 0px;
+  }
+  &__content {
+    font-size: 24px;
+    margin: 0;
+  }
+}
+
+.marginImg {
+  height: 24px;
+  width: 10px;
+}
+
+.projetImg {
+  img {
+    width: 100%;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   }
 }

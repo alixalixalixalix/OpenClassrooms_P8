@@ -9,7 +9,7 @@ const CardProjet = ({ id, titre, tag, competences, imageCouv }) => {
   const handleMouseLeave = () => setHover(false);
 
   return (
-    <Link onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <Link to={`projet/${id}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <article
         className="cardProjet"
         style={{
@@ -17,7 +17,7 @@ const CardProjet = ({ id, titre, tag, competences, imageCouv }) => {
           backgroundSize: `cover`,
         }}
       >
-        <div className="cardProjet__info" style={{ display: hover ? "block" : "none"}}>
+        <div className="cardProjet__info" style={{ opacity: hover ? "1" : "0"}}>
           <p className="cardProjet__info__tag">{tag}</p>
           <p className="cardProjet__info__titre">{titre}</p>
           <div id="listCompetences">
