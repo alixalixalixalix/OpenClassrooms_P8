@@ -1,27 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import TitreSection from "./TitreSection";
 import CardProjet from "./CardProjet";
 import data from "../data/projets.json";
 
 const dataLength = data.length;
 
+const filtres = ["Design", "Développement"];
+
 const ListProjet = () => {
+  const [stateFiltre, setStateFiltre] = useState("Tous");
+
+  const switchState = (filter) => {
+    setStateFiltre(filter); // Mettre à jour le filtre actif
+  };
+
   return (
     <section className="marginApp">
-      <TitreSection titre="Projets " num={dataLength}/>
+      <TitreSection titre="Projets " num={dataLength} />
       <div id="listButtonCategorie">
-        <button className="tous actif">Tous</button>
-        <button className="design">Design</button>
-        <button className="developpement">Développement</button>
+        <button
+          onClick={() => switchState("Tous")}
+          className={stateFiltre === "Tous" ? "actif" : ""}
+        >
+          Tous
+        </button>
+        {filtres.map((unFiltre) => (
+          <button
+            key={unFiltre}
+            onClick={() => switchState(unFiltre)}
+            className={stateFiltre === unFiltre ? "actif" : ""}
+          >
+            {unFiltre}
+          </button>
+        ))}
       </div>
       <div id="listProjet">
-        {data.map(({ id, titre, tag, competences }) => (
-          <CardProjet key={`${titre}-${id}`} id={id} titre={titre} tag={tag} competences={competences} />
-        ))}
+        {data
+          .filter(({ categorie }) =>
+            stateFiltre === "Tous" ? true : categorie.includes(stateFiltre)
+          )
+          .map(({ id, titre, tag, competences, imageCouv }) => (
+            <CardProjet
+              key={`${titre}-${id}`}
+              id={id}
+              titre={titre}
+              tag={tag}
+              competences={competences}
+              imageCouv={imageCouv}
+            />
+          ))}
       </div>
     </section>
   );
 };
 
 export default ListProjet;
-

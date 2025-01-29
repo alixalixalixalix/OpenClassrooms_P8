@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CompetenceS from "./CompetenceS";
 
-const CardProjet = ({ id, titre, tag, competences }) => {
+const CardProjet = ({ id, titre, tag, competences, imageCouv }) => {
+  const [hover, setHover] = useState(false);
 
-//  console.log(competences)
-//  const comp = Array.from({ competences })
-//  console.log(comp)
+  const handleMouseEnter = () => setHover(true);
+  const handleMouseLeave = () => setHover(false);
 
   return (
-    <Link>
-      <div className="cardProjet">
-        <div className="cardProjet__info">
+    <Link onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <article
+        className="cardProjet"
+        style={{
+          backgroundImage: hover ? `linear-gradient(rgba(255,212,56,0.8), rgba(255,212,56,0.8)), url(${imageCouv})` : `url(${imageCouv})`,
+          backgroundSize: `cover`,
+        }}
+      >
+        <div className="cardProjet__info" style={{ display: hover ? "block" : "none"}}>
           <p className="cardProjet__info__tag">{tag}</p>
           <p className="cardProjet__info__titre">{titre}</p>
-          {competences.map(({ competence }) => (
-            <CompetenceS key={`${competence}`} competence={competence} />
-          ))}
+          <div id="listCompetences">
+            {competences.map((competence, index) => (
+              <CompetenceS key={index} competence={competence} />
+            ))}
+          </div>
         </div>
-      </div>
+      </article>
     </Link>
   );
 };
