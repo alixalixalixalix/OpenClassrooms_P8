@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CompetenceS from "./CompetenceS";
 
-const CardProjet = ({ id, titre, tag, competences, imageCouv }) => {
+const CardProjet = ({ id, titre, tag, competences, imageCouv, color }) => {
   const [hover, setHover] = useState(false);
 
   const handleMouseEnter = () => setHover(true);
@@ -13,7 +13,7 @@ const CardProjet = ({ id, titre, tag, competences, imageCouv }) => {
       <article
         className="cardProjet"
         style={{
-          backgroundImage: hover ? `linear-gradient(rgba(255,212,56,0.8), rgba(255,212,56,0.8)), url(${imageCouv})` : `url(${imageCouv})`,
+          backgroundImage: hover ? `${color}, url(${imageCouv})` : `url(${imageCouv})`,
           backgroundSize: `cover`,
         }}
       >

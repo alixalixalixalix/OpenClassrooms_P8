@@ -39,7 +39,7 @@ const ListProjet = () => {
           .filter(({ categorie }) =>
             stateFiltre === "Tous" ? true : categorie.includes(stateFiltre)
           )
-          .map(({ id, titre, tag, competences, imageCouv }) => (
+          .map(({ id, titre, tag, competences, imageCouv, color }) => (
             <CardProjet
               key={`${titre}-${id}`}
               id={id}
@@ -47,6 +47,7 @@ const ListProjet = () => {
               tag={tag}
               competences={competences}
               imageCouv={imageCouv}
+              color={color}
             />
           ))}
       </div>
