@@ -11,12 +11,10 @@ const Projet = () => {
   const { id } = useParams();
   const dataTri = data.find((unProjet) => unProjet.id === id);
 
-  console.log(dataTri.titre)
-
   return (
     <div>
       <Header />
-      <ProjetIntro titre={dataTri.titre} competences={dataTri.competences} contexte={dataTri.contexte}/>
+      <ProjetIntro titre={dataTri.titre} categorie={dataTri.categorie} competences={dataTri.competences} contexte={dataTri.contexte} lien={dataTri.lien}/>
       <ProjetImg image={dataTri.image1}/>
       <div className="marginImg"></div>
       <ProjetImg image={dataTri.image2}/>
