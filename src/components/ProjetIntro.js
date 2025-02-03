@@ -1,6 +1,5 @@
 import React from "react";
 import CompetenceS from "./CompetenceS";
-import { Link } from "react-router-dom";
 
 const ProjetIntro = ({ titre, competences, categorie, contexte, lien }) => {
   return (

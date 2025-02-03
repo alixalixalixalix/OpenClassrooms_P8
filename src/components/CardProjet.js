@@ -16,8 +16,8 @@ const CardProjet = ({ id, titre, tag, competences, imageCouv, color }) => {
           backgroundImage: hover ? `${color}, url(${imageCouv})` : `url(${imageCouv})`,
           backgroundSize: `cover`,
         }}
-      >
-        <div className="cardProjet__info" style={{ opacity: hover ? "1" : "0"}}>
+      ><div className="filtre"></div>
+        <div className="cardProjet__info" style={{ opacity: hover ? "1" : ""}}>
           <p className="cardProjet__info__tag">{tag}</p>
           <p className="cardProjet__info__titre">{titre}</p>
           <div id="listCompetences">

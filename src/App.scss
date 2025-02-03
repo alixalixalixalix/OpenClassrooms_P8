@@ -26,7 +26,17 @@ html {
   margin: auto;
   padding-left: 70px;
   padding-right: 70px;
+  @media (max-width: 600px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
+
+.titreSection {
+  margin-top: 36px;
+}
+
+/*————— HEADER —————*/
 
 header {
   display: flex;
@@ -85,6 +95,8 @@ header {
   }
 }
 
+/*————— PRÉSENTATION —————*/
+
 #sectionPresentation {
   margin-bottom: 120px;
   h1 {
@@ -97,17 +109,21 @@ header {
     &__date {
       display: inline;
       opacity: 0.4;
-      margin-right: 6px;
+      margin: 0px 6px 0px 0px;
     }
     &__poste {
       display: inline;
+      margin: 0px;
+    }
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
     }
   }
 }
 
-.titreSection {
-  margin-top: 36px;
-}
+/*————— LISTE PROJETS —————*/
 
 #listButtonCategorie {
   display: flex;
@@ -140,6 +156,9 @@ header {
     flex-grow: 1;
     gap: 24px;
     text-decoration: none;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 }
 
@@ -152,6 +171,12 @@ header {
     opacity: 0;
     padding: 36px;
     transition: opacity 500ms;
+    @media (max-width: 600px) {
+      opacity: 1;
+      position: absolute;
+      bottom: 0;
+      padding: 36px 36px 0 36px;
+    }
     &__tag {
       text-transform: uppercase;
       margin: 0;
@@ -161,6 +186,7 @@ header {
       font-size: 36px;
       margin-top: 8px;
     }
+    /*   
     &__competence {
       position: absolute;
       bottom: 36px;
@@ -169,33 +195,32 @@ header {
       padding: 6px 12px 6px 12px;
       border: 1px solid $color-black;
       border-radius: 8px;
-    }
+    */
   }
 }
 
-.competenceXL {
-  display: inline-flex;
-  margin: 0 12px 12px 0;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
-  p {
-    display: inline;
-    font-size: 36px;
-    padding: 6px 12px;
-    border: 1px solid $color-black;
-    border-radius: 8px;
-    margin: 0;
+.filtre {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  display: none;
+  @media (max-width: 600px) {
+    display: block;
   }
 }
 
 #listCompetences {
   position: absolute;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   bottom: 36px;
   gap: 6px;
+  @media (max-width: 600px) {
+    position: relative;
+    padding-top: 24px;
+  }
 }
 
 .competenceS {
@@ -208,10 +233,33 @@ header {
   }
 }
 
+/*————— COMPÉTENCES —————*/
+
+.competenceXL {
+  display: inline-flex;
+  margin: 0 12px 12px 0;
+  p {
+    display: inline;
+    font-size: 36px;
+    padding: 6px 12px;
+    border: 1px solid $color-black;
+    border-radius: 8px;
+    margin: 0;
+    @media (max-width: 600px) {
+      font-size: 24px;
+    }
+  }
+}
+
+/*————— FOOTER —————*/
+
 footer {
   width: 100%;
   position: relative;
   margin-top: 256px;
+  @media (max-width: 600px) {
+    margin-top: 128px;
+  }
   img {
     width: 100%;
     opacity: 0.05;
@@ -233,12 +281,27 @@ footer {
       p {
         font-size: 64px;
         margin: 0;
+        @media (max-width: 600px) {
+          font-size: 24px;
+        }
       }
-
     }
-
   }
 }
+
+.footer__imgMobile {
+  display: none;
+}
+@media (max-width: 600px) {
+  .footer__imgDesktop {
+    display: none;
+  }
+  .footer__imgMobile {
+    display: block;
+  }
+}
+
+/*————— PAGE PROJET —————*/
 
 #projetIntro {
   .projetIntro__listCompetences {
@@ -248,14 +311,25 @@ footer {
   h1 {
     font-size: 64px;
     margin-top: 12px;
+    @media (max-width: 600px) {
+      font-size: 36px;
+    }
   }
   .projetContexte {
     margin: 64px 0 128px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 600px) {
+      margin: 64px 0 64px 0;
+
+      flex-direction: column;
+    }
     .conteneurP {
       width: 50%;
+      @media (max-width: 600px) {
+        width: 100%;
+      }
       &__titre {
         color: $color-black;
         opacity: 0.3;
@@ -265,6 +339,27 @@ footer {
       &__content {
         font-size: 24px;
         margin: 0;
+      }
+    }
+    .conteneurLien {
+      button {
+        font-size: 24px;
+        padding: 6px 12px;
+        border-radius: 50px;
+        border: 0px;
+        background-color: $color-black;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.7;
+        }
+        @media (max-width: 600px) {
+          font-size: 16px;
+          margin-top: 36px;
+        }
       }
     }
   }
@@ -284,12 +379,11 @@ footer {
       font-size: 24px;
       margin: 0;
     }
+    @media (max-width: 600px) {
+      width: 100%;
+      margin: 64px 0 64px 0;
+    }
   }
-}
-
-.marginImg {
-  height: 24px;
-  width: 10px;
 }
 
 .projetImg {
@@ -299,20 +393,7 @@ footer {
   }
 }
 
-.conteneurLien {
-  button {
-    font-size: 24px;
-    padding: 6px 12px;
-    border-radius: 50px;
-    border: 0px;
-    background-color: $color-black;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.7;
-    }
-  }
+.marginImg {
+  height: 24px;
+  width: 10px;
 }
