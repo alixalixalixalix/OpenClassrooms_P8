@@ -19,7 +19,7 @@ const CardProjet = ({ id, titre, tag, competences, imageCouv, color }) => {
       ><div className="filtre"></div>
         <div className="cardProjet__info" style={{ opacity: hover ? "1" : ""}}>
           <p className="cardProjet__info__tag">{tag}</p>
-          <p className="cardProjet__info__titre">{titre}</p>
+          <h2 className="cardProjet__info__titre">{titre}</h2>
           <div id="listCompetences">
             {competences.map((competence, index) => (
               <CompetenceS key={index} competence={competence} />

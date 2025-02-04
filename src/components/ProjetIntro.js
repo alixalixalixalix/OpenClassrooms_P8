@@ -20,7 +20,7 @@ const ProjetIntro = ({ titre, competences, categorie, contexte, lien }) => {
             <button>
               Consulter le projet sur{" "}
               {categorie === "Design" ? `Behance` : `Github`}
-              <img src="/icons/picto-ext.svg" alt=""></img>
+              <img src={`${process.env.PUBLIC_URL}/icons/picto-ext.svg`} alt=""></img>
             </button>
           </a>
         </div>

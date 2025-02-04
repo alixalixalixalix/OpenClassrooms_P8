@@ -9,38 +9,38 @@ const Header = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <img src="/icons/picto-dribbble.svg" alt=""></img>
+          <img src={`${process.env.PUBLIC_URL}/icons/picto-dribbble.svg`} alt="icon dribbble"></img>
         </a>
         <a
           href="https://www.behance.net/alixbocquier"
           target="_blank"
           rel="noreferrer"
         >
-          <img src="/icons/picto-behance.svg" alt=""></img>
+          <img src={`${process.env.PUBLIC_URL}/icons/picto-behance.svg`} alt="icon behance"></img>
         </a>
         <a
           href="https://www.linkedin.com/in/alixbocquier/"
           target="_blank"
           rel="noreferrer"
         >
-          <img src="/icons/picto-linkedin.svg" alt=""></img>
+          <img src={`${process.env.PUBLIC_URL}/icons/picto-linkedin.svg`} alt="icon linkedin"></img>
         </a>
         <a
           href="https://www.instagram.com/_xilakobier/"
           target="_blank"
           rel="noreferrer"
         >
-          <img src="/icons/picto-instagram.svg" alt=""></img>
+          <img src={`${process.env.PUBLIC_URL}/icons/picto-instagram.svg`} alt="icon instagram"></img>
         </a>
         <a
           href="https://github.com/alixalixalixalix"
           target="_blank"
           rel="noreferrer"
         >
-          <img src="/icons/picto-github.svg" alt=""></img>
+          <img src={`${process.env.PUBLIC_URL}/icons/picto-github.svg`} alt="icon githbu"></img>
         </a>
       </div>
-      
+
       {/* 
       <div id="toggle">
         <p className="actif">ALIX</p>
