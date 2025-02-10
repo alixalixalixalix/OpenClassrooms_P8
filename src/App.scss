@@ -2,7 +2,6 @@
   font-family: "matter-regular";
   src: url(assets/fonts/Matter-Regular.ttf);
 }
-
 @font-face {
   font-family: "matter-bold";
   src: url(assets/fonts/Matter-Bold.ttf);
@@ -175,7 +174,7 @@ header {
       opacity: 1;
       position: absolute;
       bottom: 0;
-      padding: 36px 36px 0 36px;
+      padding: 24px 24px 0 24px;
     }
     &__tag {
       text-transform: uppercase;
@@ -186,16 +185,6 @@ header {
       font-size: 36px;
       margin-top: 8px;
     }
-    /*   
-    &__competence {
-      position: absolute;
-      bottom: 36px;
-      margin: 0;
-      display: inline;
-      padding: 6px 12px 6px 12px;
-      border: 1px solid $color-black;
-      border-radius: 8px;
-    */
   }
 }
 
@@ -215,15 +204,16 @@ header {
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  bottom: 36px;
   gap: 6px;
+  bottom: 36px;
   @media (max-width: 600px) {
     position: relative;
-    padding-top: 24px;
+    padding-top: 12px;
+    bottom: 24px;
   }
 }
 
-.competenceS {
+.competenceSmall {
   display: inline-flex;
   p {
     border: 1px solid black;
@@ -342,6 +332,9 @@ footer {
       }
     }
     .conteneurLien {
+      @media (max-width: 600px) {
+        width: 100%;
+      }
       button {
         font-size: 24px;
         padding: 6px 12px;
@@ -351,6 +344,7 @@ footer {
         color: white;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 6px;
         cursor: pointer;
         &:hover {
@@ -358,7 +352,9 @@ footer {
         }
         @media (max-width: 600px) {
           font-size: 16px;
-          margin-top: 36px;
+          margin-top: 24px;
+          width: 100%;
+          padding: 16px 12px;
         }
       }
     }

@@ -6,7 +6,7 @@ const Presentation = () => {
       <h1>
         Bonjour, je m'appelle Alix Bocquier.
         <br />
-        Je suis designer ui et développeur front freelance.
+        Je suis designer ui et développeur front.
       </h1>
       <div className="exp">
         <p className="exp__date">2024-2025</p>

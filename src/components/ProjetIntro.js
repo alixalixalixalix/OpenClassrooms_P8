@@ -1,12 +1,12 @@
 import React from "react";
-import CompetenceS from "./CompetenceS";
+import CompetenceSmall from "./CompetenceSmall";
 
 const ProjetIntro = ({ titre, competences, categorie, contexte, lien }) => {
   return (
     <div id="projetIntro" className="marginApp">
       <div className="projetIntro__listCompetences">
         {competences.map((competence, index) => (
-          <CompetenceS key={index} competence={competence} />
+          <CompetenceSmall key={index} competence={competence} />
         ))}
       </div>
       <h1>{titre}</h1>
